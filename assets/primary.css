@@ -1,30 +1,89 @@
+/*color scheme:
+http://paletton.com/#uid=12b120k00wa00Oc-Xh2008U002I
+*/
 html{
     width: 100%;
     height: 100%;
 }
 body{
     font-size: 125%;
-    font-family: arial, verdana;
-    padding: 5% 20% 5% 20%;
-    
+    font-family: 'Source Sans Pro', arial, verdana;
+    color: #444444;
+    padding: 2% 20% 2% 20%;
+    background-attachment: fixed;
+/* IE10 Consumer Preview */ 
+background-image: -ms-linear-gradient(top, #FBFBFB 0%, #F6F9EB 100%);
+
+/* Mozilla Firefox */ 
+background-image: -moz-linear-gradient(top, #FBFBFB 0%, #F6F9EB 100%);
+
+/* Opera */ 
+background-image: -o-linear-gradient(top, #FBFBFB 0%, #F6F9EB 100%);
+
+/* Webkit (Safari/Chrome 10) */ 
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FBFBFB), color-stop(1, #F6F9EB));
+
+/* Webkit (Chrome 11+) */ 
+background-image: -webkit-linear-gradient(top, #FBFBFB 0%, #F6F9EB 100%);
+
+/* W3C Markup, IE10 Release Preview */ 
+background-image: linear-gradient(to bottom, #FBFBFB 0%, #F6F9EB 100%);
 }
 h1{
-    font-size: 250%;
-    font-family: georgia,rockwell;
+    font-size: 325%;
+    font-family:  Pacifico, georgia, rockwell;
     text-align: center;
-    letter-spacing:2px
+    letter-spacing:5px;
+    font-weight:900; 
+    color: #3C4619;
+    text-shadow:  1px 1px 3px #829400;
+}
+.forceAlign{
+    text-align: center;
+    
+}
+.circleLink{
+    background-color: #3C4619;
+    border-radius: 100%;
+    padding: 20px 15px 10px 15px;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    vertical-align: middle;
+    display:inline-block;
+    box-shadow: 1px 1px 3px 1px #829400;
+    margin: 10px 35px;
+}
+.circleLink:hover{
+    background-color:#829400;
+    box-shadow: 1px 1px 3px 1px #576F00;
 }
 p{
-    font-size: 110s%;
+    font-size: 115%;
     text-indent: 5%;
 }
 span{
     font-size: 115%;   
+    font-weight: 650;
+    letter-spacing:1px;
+    color: #3C4619;
 }
 a, a:link, a:visited {
     text-decoration: none;
-    /*/color:#F5EEE0;*/
+    color:#829400;
 }
 a:hover {
     font-weight: bolder;
+}
+*.unselectable {
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+
+   /*
+     Introduced in IE 10.
+     See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+   */
+   -ms-user-select: none;
+   user-select: none;
 }
