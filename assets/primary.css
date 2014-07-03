@@ -9,7 +9,9 @@ body{
     font-size: 125%;
     font-family: 'Source Sans Pro', arial, verdana;
     color: #444444;
-    padding: 2% 20% 2% 20%;
+    padding: 2% 20% 0% 20%;
+    
+    text-align: center;
     background-attachment: fixed;
     /* IE10 Consumer Preview */ 
     background-image: -ms-linear-gradient(top, #FBFBFB 0%, #F6F9EB 100%);
@@ -32,7 +34,6 @@ body{
 h1{
     font-size: 325%;
     font-family:  Pacifico, georgia, rockwell;
-    text-align: center;
     letter-spacing:5px;
     font-weight:900; 
     color: #3C4619;
@@ -65,7 +66,6 @@ h1{
 }
 p{
     font-size: 115%;
-    text-indent: 5%;
 }
 span{
     font-size: 115%;   
