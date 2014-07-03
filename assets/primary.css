@@ -11,23 +11,23 @@ body{
     color: #444444;
     padding: 2% 20% 2% 20%;
     background-attachment: fixed;
-/* IE10 Consumer Preview */ 
-background-image: -ms-linear-gradient(top, #FBFBFB 0%, #F6F9EB 100%);
+    /* IE10 Consumer Preview */ 
+    background-image: -ms-linear-gradient(top, #FBFBFB 0%, #F6F9EB 100%);
 
-/* Mozilla Firefox */ 
-background-image: -moz-linear-gradient(top, #FBFBFB 0%, #F6F9EB 100%);
+    /* Mozilla Firefox */ 
+    background-image: -moz-linear-gradient(top, #FBFBFB 0%, #F6F9EB 100%);
 
-/* Opera */ 
-background-image: -o-linear-gradient(top, #FBFBFB 0%, #F6F9EB 100%);
+    /* Opera */ 
+    background-image: -o-linear-gradient(top, #FBFBFB 0%, #F6F9EB 100%);
 
-/* Webkit (Safari/Chrome 10) */ 
-background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FBFBFB), color-stop(1, #F6F9EB));
+    /* Webkit (Safari/Chrome 10) */ 
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FBFBFB), color-stop(1, #F6F9EB));
 
-/* Webkit (Chrome 11+) */ 
-background-image: -webkit-linear-gradient(top, #FBFBFB 0%, #F6F9EB 100%);
+    /* Webkit (Chrome 11+) */ 
+    background-image: -webkit-linear-gradient(top, #FBFBFB 0%, #F6F9EB 100%);
 
-/* W3C Markup, IE10 Release Preview */ 
-background-image: linear-gradient(to bottom, #FBFBFB 0%, #F6F9EB 100%);
+    /* W3C Markup, IE10 Release Preview */ 
+    background-image: linear-gradient(to bottom, #FBFBFB 0%, #F6F9EB 100%);
 }
 h1{
     font-size: 325%;
@@ -53,6 +53,11 @@ h1{
     display:inline-block;
     box-shadow: 1px 1px 3px 1px #829400;
     margin: 10px 35px;
+    -o-transition: background-color .2s;
+    -ms-transition: background-color .2s;
+    -moz-transition: background-color .2s;
+    -webkit-transition: background-color .2s;
+    transition: background-color .2s;
 }
 .circleLink:hover{
     background-color:#829400;
