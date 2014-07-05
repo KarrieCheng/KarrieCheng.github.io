@@ -12,6 +12,7 @@ body{
     color: #FFFFFF;
     opacity: .95;
     margin-bottom: 2%;
+    text-align: left;
 }
 h1{
     font-size: 300%;
@@ -20,6 +21,22 @@ h1{
     margin-bottom: 0px;
     text-shadow:  2px 2px 5px #223344;
     font-weight: 800;
+}
+h2{
+    text-align: left;
+}
+h3{
+    opacity: .9;
+    -o-transition: opacity .2s;
+    -ms-transition: opacity .2s;
+    -moz-transition: opacity .2s;
+    -webkit-transition: opacity .2s;
+    transition: opacity .2s;
+}
+h3:hover {
+    font-weight: 800;
+    letter-spacing:1px;
+    opacity: 1;
 }
 .forceAlign{
     text-align: center;
@@ -47,8 +64,10 @@ h1{
 }
 p{
     text-indent:50px;
-    font-size: 125%;
+    font-size: 110%;
+    text-align: left;
 }
+
 span{
     font-size: 115%;   
     font-weight: 650;
@@ -58,8 +77,9 @@ a, a:link, a:visited {
     text-decoration: none;
     color:#FFFFFF;
 }
-a:hover {
-    font-weight: bolder;
+h2 a:hover, p a:hover {
+    font-weight: 800;
+    letter-spacing: 1px;
 }
 *.unselectable {
    -moz-user-select: -moz-none;
