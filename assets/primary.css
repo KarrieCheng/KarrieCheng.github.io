@@ -4,48 +4,28 @@ http://paletton.com/#uid=12b120k00wa00Oc-Xh2008U002I
 html{
     width: 100%;
     height: 100%;
+    padding-top: 10%;
 }
 body{
     font-size: 130%;
     font-family: 'Source Sans Pro', arial, verdana;
-    color: #444444;
-    padding: 2% 20% 0% 20%;
-    
-    text-align: center;
-    background-attachment: fixed;
-    /* IE10 Consumer Preview */ 
-    background-image: -ms-linear-gradient(top, #FBFBFB 0%, #F6F9EB 100%);
-
-    /* Mozilla Firefox */ 
-    background-image: -moz-linear-gradient(top, #FBFBFB 0%, #F6F9EB 100%);
-
-    /* Opera */ 
-    background-image: -o-linear-gradient(top, #FBFBFB 0%, #F6F9EB 100%);
-
-    /* Webkit (Safari/Chrome 10) */ 
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FBFBFB), color-stop(1, #F6F9EB));
-
-    /* Webkit (Chrome 11+) */ 
-    background-image: -webkit-linear-gradient(top, #FBFBFB 0%, #F6F9EB 100%);
-
-    /* W3C Markup, IE10 Release Preview */ 
-    background-image: linear-gradient(to bottom, #FBFBFB 0%, #F6F9EB 100%);
+    color: #FFFFFF;
+    opacity: .95;
+    margin-bottom: 2%;
 }
 h1{
-    font-size: 325%;
-    font-family:  Pacifico, georgia, rockwell;
+    font-size: 300%;
+    font-family:  'Raleway', georgia, rockwell;
     letter-spacing:5px;
-    font-weight:900; 
-    color: #3C4619;
     margin-bottom: 0px;
-    text-shadow:  1px 1px 3px #829400;
+    text-shadow:  2px 2px 5px #223344;
+    font-weight: 800;
 }
 .forceAlign{
     text-align: center;
     
 }
 .circleLink{
-    background-color: #3C4619;
     border-radius: 100%;
     padding: 18px 15px 12px 15px;
     width: 70px;
@@ -53,30 +33,30 @@ h1{
     text-align: center;
     vertical-align: middle;
     display:inline-block;
-    box-shadow: 1px 1px 3px 1px #829400;
     margin: 10px 35px;
-    -o-transition: background-color .2s;
-    -ms-transition: background-color .2s;
-    -moz-transition: background-color .2s;
-    -webkit-transition: background-color .2s;
-    transition: background-color .2s;
+    opacity: .80;
+    -o-transition: opacity .2s;
+    -ms-transition: opacity .2s;
+    -moz-transition: opacity .2s;
+    -webkit-transition: opacity .2s;
+    transition: opacity .2s;
 }
 .circleLink:hover{
-    background-color:#829400;
-    box-shadow: 1px 1px 3px 1px #576F00;
+    opacity: 1;
+    border-color: #ffffff;
 }
 p{
-    font-size: 115%;
+    text-indent:50px;
+    font-size: 125%;
 }
 span{
     font-size: 115%;   
     font-weight: 650;
     letter-spacing:1px;
-    color: #3C4619;
 }
 a, a:link, a:visited {
     text-decoration: none;
-    color:#829400;
+    color:#FFFFFF;
 }
 a:hover {
     font-weight: bolder;
