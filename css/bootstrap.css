@@ -54,10 +54,6 @@ a:active,
 a:hover {
   outline: 0;
 }
-h2 > a:hover {
-    font-weight: 800;
-    letter-spacing:1px;
-}
 abbr[title] {
   border-bottom: 1px dotted;
 }
@@ -112,7 +108,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: 'Arvo', arial, verdana;
+  font-family: 'Montserrat', arial, verdana;
   font-size: 1em;
 }
 button,
@@ -209,7 +205,7 @@ html {
 body {
     font-family: 'Source Sans Pro', arial, verdana; /*font family that counts*/
     line-height: 1.42857143;
-    font-weight: 200;
+    font-weight: 400;
 }
 input,
 button,
@@ -226,11 +222,7 @@ a {
 
 p > a:hover {
     font-weight: 800;
-    letter-spacing:1px;
-}
-h2 > a:hover {
-    font-weight: 800;
-    letter-spacing:1px;
+    letter-spacing:2px;
 }
 figure {
   margin: 0;
