@@ -2110,17 +2110,5 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
       Plugin.call($spy, data)
     })
   })
- function close_toggle() {
-   if ($(window).width() <= 768) {
-      $('.nav a').on('click', function(){
-          $(".navbar-toggle").click();
-      });
-   }
-   else {
-     $('.nav a').off('click');
-   }
-}
-close_toggle();
 
-$(window).resize(close_toggle);
 }(jQuery);
