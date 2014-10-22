@@ -282,7 +282,7 @@ a:after {
 	padding-top:200px;
     padding-bottom:100px;
 	text-align:center;
-	background-attachment: relative;
+	background-attachment: fixed;
 	background-position: center center;
 	min-height: 550px;
 	width: 100%;
@@ -308,6 +308,8 @@ a:after {
 	font-weight: bold;
 	text-shadow: 2px 2px 2px #000;
 }
+
+
 
 #headerwrap p {
 	color:#ffffff;
@@ -400,7 +402,7 @@ a:after {
     -o-background-size: cover;
     background-size: cover;
 
-    background-attachment: relative;
+    background-attachment: fixed;
     
     text-align: center;
 }
