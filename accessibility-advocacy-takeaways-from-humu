@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="”en’">
+  <head>
+    <title>Accessibility Advocacy Takeaways from Humu</title>
+    <style>
+      body {
+        padding: 2% 10%;
+      }
+      p {
+        font-size: 1em;
+        line-height: 1.5em;
+      }
+      section {
+        padding-bottom: 2em;
+      }
+      section > section {
+        padding-bottom: 1.5em;
+      }
+      ul,
+      ol {
+        margin: inherit;
+        padding: inherit;
+        line-height: 1.5em;
+      }
+      li {
+        margin-inline-start: 2em;
+        padding-inline-start: 2em;
+      }
+      aside {
+        font-size: 0.9em;
+        font-family: "Courier New", Courier, monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section>
+        <h1>Accessibility Advocacy Takeaways from Humu</h1>
+        <p>
+          Creating products that everyone can use, regardless of ability, is
+          simply the moral thing to do. There are many companies that recognize
+          this and have a top-down approach to making their products accessible.
+          Even then, it can be difficult to achieve complete usability for all
+          users. However, when the accessibility approach comes from the bottom
+          up, it becomes a matter of will in addition to skill. But it is
+          definitely still possible.
+        </p>
+
+        <p>
+          At Humu, without even an official accessibility program or leadership,
+          we were able to go from having accessibility expressly stated as “not
+          being a priority” in October 2021 to having a trained engineering
+          team, a wealth of resources, a thriving community, and accessibility
+          as a requirement in some of Humu’s latest features by December 2022.
+          Here I will be sharing things that we did at Humu to improve usability
+          for all and learnings (both framed as advice), particularly from the
+          point of view of an individual contributor on the engineering team.
+        </p>
+      </section>
+      <section>
+        <h2>Share knowledge</h2>
+
+        <p>
+          In any accessibility effort, you can help your team by setting a
+          baseline set of knowledge and by providing them with resources and
+          tools to build products that can be truly inclusive.
+        </p>
+
+        <section>
+          <h3>Set a Baseline</h3>
+
+          <p>
+            Before anything, it is important to establish awareness that
+            different users have different abilities and that these differences
+            can affect the web browsing experience. Without establishing this,
+            your team might not understand why you were asking them to do
+            certain things (and may not do them as a result). In my experience,
+            when a company has no accessibility program, the lack of
+            accessibility stems from a lack of disability awareness rather than
+            willful neglect. Once they know about an issue, most engineers are
+            happy to make changes so the resulting feature can be more
+            accommodating.
+          </p>
+          <p>
+            Introducing people to accessibility one by one is not particularly
+            efficient, so if there is an avenue for presenting on accessibility,
+            take it. You can uniformly set a baseline for accessibility through
+            an introductory presentation that covers the above topics in
+            addition to how to test, tools for catching usability issues, and
+            common ways products can come up short (like the classic
+            alt-text/button examples). You can also share the related slides and
+            meeting recordings so they can be viewed asynchronously. This is
+            what my fellow engineer, Andres Sanchez, and I did in March 2022,
+            and then once again in June after we had significantly increased our
+            team size.
+          </p>
+          <aside>
+            <details>
+              <summary>More notes on frequency</summary>
+
+              I had a set of presentations that I would give on a quarterly
+              basis to all front-end engineers at the place I worked prior to
+              Humu. The quarterly basis of these presentations meant that any
+              engineer would know the expectations for accessibility we had at
+              least by their third month at that company. It’s also useful to
+              have it as a recurring meeting in case folks have a hard time
+              finding time otherwise or would like to ask questions. However,
+              this was supposed to be Humu-focused so that’s why this is in the
+              footnote
+            </details>
+          </aside>
+        </section>
+        <h3>Make Learning Easy</h3>
+
+        <p>
+          There are other ways to share information outside of presentations.
+          Ultimately, you want to make it as easy as possible to find and apply
+          knowledge.
+        </p>
+
+        <p>
+          At Humu, I created an accessibility drive and training materials and
+          referenced some of these materials in widely used documents. For
+          example, Humu’s quality assurance (QA) process (known at Humu as
+          ‘bug-bashing’) not only contained an explanation on how to bug-bash
+          with the screenreader or VoiceOver but also linked to the longer and
+          more in-depth videos. I also included practices that would address
+          common accessibility issues in a style guideline document, which is
+          something that one of our most tenured engineers, Kat Slump,
+          suggested.
+        </p>
+
+        <p>
+          (Engineering specific) Another place to distribute knowledge is
+          directly in the code as comments. Some reusable components need to be
+          composed a certain way, and you want to call this out to teammates. An
+          example of this would be mentioning that a tooltip trigger needs to be
+          a button so non-mouse/trackpad users are able to interact with it.
+          Also, you may find that the codebase has 3 different tooltips, but
+          only one of those tooltips is accessible. You could also prefix the
+          inaccessible tooltips’ names with ‘deprecated’, and at the top of the
+          files note the reasons why the tooltip from a certain library is
+          preferred.
+        </p>
+
+        <p>
+          (Engineering specific) You can also share knowledge within pull
+          request reviews. Sometimes a bit of code may need just an additional
+          attribute to make it more perceivable or navigable. When this happens,
+          it’s useful to write out the exact change required so that the author
+          of the pull request can directly apply this comment. Explain why
+          you’re suggesting the change and how it is improving the experience
+          for users so the author will remember the suggestion in the future. It
+          also saves time and can prevent confusion and frustration when the
+          original author does not have the knowledge to fix the issue and feels
+          the need to investigate further to correctly apply review suggestions
+          as a result.
+        </p>
+
+        <ul>
+          Tickets can also be a place to call out features that were already
+          released that need work, the reasons behind it, and the potential
+          approaches for it. This is useful for granular, one-and-done tickets.
+          In these tickets, I generally included the following:
+
+          <li>What the desired behavior was</li>
+
+          <li>
+            What the current behavior was and how it may have been under-serving
+            users
+          </li>
+
+          <li>What a potential approach could have been to address it</li>
+
+          <li>
+            The particular Web Content Accessibility Guidelines (WCAG) success
+            criterion that had more information on the particular issue
+          </li>
+
+          <li>
+            A label tagging it as an accessibility (“a11y”) issue so that we
+            could easily find all of the accessibility issues
+          </li>
+        </ul>
+
+        <h3>Create Communities For Learning</h3>
+
+        <p>
+          There are a lot of considerations to take into account while creating
+          an accessible product, and not all of them were captured in the Humu
+          documents. Luckily, we had different places available for the team to
+          seek out additional help.
+        </p>
+
+        <p>
+          Andres Sanchez, the engineer mentioned earlier, created a Slack
+          channel dedicated to accessibility which became a key safe place for
+          anyone to ask questions or share knowledge in the flow of work. It
+          also generally became the hub for us to share resources, interesting
+          news, or tools.
+        </p>
+
+        <p>
+          We also had multiple office hours throughout the week for those who
+          might need help with implementing inclusive experiences. This is an
+          idea that I got from a former coworker at Hello Alice, Marianne
+          Masculino, that worked well at Humu too.
+        </p>
+
+        <p>
+          If you create enough opportunities and spaces for learning, eventually
+          making an inaccessible product becomes harder and harder.
+        </p>
+
+        <h2>Share Your Favorite Resources</h2>
+
+        <ul>
+          Not all content needs to be custom! For those who are interested in
+          learning more about web accessibility beyond our organization’s
+          context, I like to share the following resources (which are mostly
+          specifications):
+
+          <li>The Google Intro to Accessibility article</li>
+
+          <li>A11ycasts with Rob Dodson</li>
+
+          <li>HyperText Markup Language (HTML) Specification</li>
+
+          <li>Accessible Rich Internet Applications (ARIA) Specification</li>
+
+          <li>
+            World Wide Web Consortium (W3C) Accessibility Standards Overview
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Share your struggles and strategies</h2>
+
+        <p>
+          It was immensely helpful to share my struggles and thoughts with
+          managers and peers alike. Doing this can help you understand the best
+          way to implement change within your organization. Each time I did this
+          at Humu, I received support, insight, or advice without intentionally
+          soliciting it. Here are a handful of examples of where this happened
+          and how Humu’s products consequently became more accessible.
+        </p>
+
+        <p>
+          During my first project at Humu, I had been the recipient of the
+          disheartening words that every advocate seems to hear: “Accessibility
+          is not a priority at this time”. I mentioned this to my first manager,
+          Max Berman, who not only (1) gave me hope by correctly predicting that
+          it would become more of a priority and that we’d be able to work on it
+          more eventually, but (2) also suggested that I could still improve
+          accessibility in the meantime by making impactful, low-lift
+          improvements. This suggestion allowed me to work in a way that still
+          felt good while also respecting others’ wishes.
+        </p>
+
+        <p>
+          Early on, I also didn’t feel like I had the ‘right’ to create tickets.
+          One of my peers who empowered me to do so was Andres Sanchez. He
+          showed me the appropriate place where I could keep these tickets so
+          they would eventually get addressed without causing too much noise for
+          those who used the project boards. This allowed me to document certain
+          issues and add details related to any accessibility shortcomings (as
+          mentioned in the prior section) without my own personal hangup of
+          feeling like I was harming any relationships by doing so.
+        </p>
+
+        <p>
+          When Kevin Ball became my new manager in late March, accessibility was
+          more accepted. However, despite this, I wasn’t satisfied with where it
+          was at and I felt like we could do much more. When I had talked about
+          wanting to just go ahead and address some short accessibility tickets
+          (such as setting the language and titling pages) but also was worried
+          about project deadlines, he came up with a solution where new
+          engineers could work on these tickets. This served two purposes: it
+          helped them get familiarized with the code base while also allowing me
+          to focus on project work. When I lamented how accessibility wasn’t
+          officially part of the process, he encouraged me to talk to our
+          product manager to ask if we could add that and to write up how to
+          carry out the manual tests. He also helped make it a norm by including
+          it in the QA template.
+        </p>
+
+        <p>
+          When discussing strategies for making the newest feature accessible
+          with an engineer-turned-manager, Matte Bailey, he introduced to me the
+          idea of the Pit of Success: “A well-designed system makes it easy to
+          do the right things and annoying (but not impossible) to do the wrong
+          things”. For me, this meant having:
+        </p>
+
+        <ol>
+          <li>
+            A team that is trained to recognize different needs and can create a
+            product that accommodates everyone
+          </li>
+
+          <li>
+            Testing and tools in place that can catch accessibility issues.
+          </li>
+        </ol>
+
+        <p>
+          As a direct result of this talk, we were able to move the needle for
+          both of these areas. Matte was able to coordinate a series of meetings
+          with his team and me so they could learn some techniques and
+          information for building a feature usable by truly anyone. This also
+          spurred me to finish actually further configuring and enabling the
+          eslint-plugin-a11y-jsx, a small piece of #2 that I had been putting
+          off for a while.
+        </p>
+
+        <aside>
+          <details>
+            <summary>Surrounding context around this discussion</summary>
+            Accessibility at Humu had a huge win in late spring of 2022 when our
+            VP of Product, Will Doolittle, required that our newest feature be
+            WCAG A compliant. During this team, Matte Bailey was one of the
+            leads of this team (while I was on a different one) and I had a
+            catch-up meeting.
+          </details>
+        </aside>
+
+        <p>
+          Even when you are trying to make a large change in an organization, it
+          is still beneficial to work within its norms. You will always get
+          further working with your coworkers than working against them. Your
+          individual experience will differ, but the advice you receive will be
+          just as valuable.
+        </p>
+      </section>
+      <section>
+        <h2>Share the Load</h2>
+
+        <p>
+          In time, you may find that your responsibilities and what you want to
+          accomplish for accessibility exceed your capacity. When this happens,
+          you can consider sharing the load in order to protect your mental
+          health, continue doing what is right, and also highlight the other
+          experts on your team.
+        </p>
+
+        <aside>
+          <details>
+            <summary>Personal context</summary>
+
+            This particular piece is incredibly dependent on your particular
+            situation. At Humu there was no official accessibility lead, team,
+            committee, or anything like that, so any work towards that had to be
+            balanced with project work and team responsibilities. Since this was
+            something that I was particularly passionate about and no one else
+            was owning it on the engineering side when I first joined and the
+            other champions had left months before I joined, I went ahead and
+            created a general engineering strategy for accessibility, tickets,
+            and documentation. That led to others also asking me questions,
+            which eventually led to carving out time in my schedule to ensure
+            that the engineering side of Humu had some general direction
+            regarding accessibility. This was another more personal hang-up that
+            I had, and it was partially because I had been an accessibility lead
+            at the previous place I worked at. When I had that title, I felt
+            like I had more of a go-ahead to do certain things (including making
+            an accessibility committee) that I no longer felt like I had the
+            right to do without that title at Humu. Since nothing here was
+            official, it felt like I was imposing on people by asking for
+            things.
+          </details>
+        </aside>
+
+        <p>
+          As part of trying to disseminate accessibility knowledge, I had
+          dedicated accessibility office hours multiple days a week so it would
+          be more convenient and consistent for others to find time to talk with
+          me. Unfortunately, in September I had some health issues on top of
+          having more responsibilities. This meant I had to make some difficult
+          decisions in different parts of my life to create more balance. One
+          decision was cutting down my office hours to fewer hours each week.
+          Luckily, by this time we had hired two other engineers who also had
+          accessibility expertise, Vincent Colavin and Jason Featheringham, who
+          thankfully agreed to join me in hosting office hours. Not only did
+          this give me some breathing room, but this signaled that Vincent and
+          Jason were knowledgeable in this area as well.
+        </p>
+
+        <p>
+          When I found a new job and put in my resignation notice at Humu, I
+          didn’t want the documentation or progress to be lost. At this point in
+          time, Diana Viglucci, an engineer on Matte and Kat’s team, had shown a
+          lot of leadership and passion in Humu’s accessibility efforts. They
+          were an easy choice to entrust ownership of the accessibility drive
+          and other responsibilities I had taken on in the last year. It was no
+          small set of responsibilities, but still, they generously accepted.
+        </p>
+
+        <aside>
+          <details>
+            <summary>This was a lot!</summary>
+            They took on addressing the next items in the accessibility plan
+            documents, updating the general and semantic presentations, taking
+            ownership of the tickets, and making sure the accessibility portion
+            of the bug bash document was up-to-date, among other things.
+          </details>
+        </aside>
+        <p>
+          For me, it is particularly hard to ask people for help. However, when
+          it’s for something as crucial as making sure every user has the
+          ability to use our app, it became much easier. It’s also important to
+          remember that something as broad and encompassing as making your
+          product accessible cannot be a one-person thing, especially when there
+          is no specific role for it.
+        </p>
+      </section>
+
+      <section>
+        <h2>Share Recognition</h2>
+
+        <p>
+          Finally, I recommend recognizing the efforts of others who have
+          contributed to making the product more inclusive.
+        </p>
+
+        <p>
+          First off, it’s simply the polite thing to do! It can be very tiring
+          and uncomfortable speaking up for what you believe in, especially when
+          it initially seems like you have an unpopular opinion.
+        </p>
+
+        <p>
+          Secondly, it’s important to recognize that you’re in this together
+          with others who also care about inclusivity.
+        </p>
+
+        <p>
+          Finally, movements that are started by a small group may seem
+          exclusive at first. Recognizing others helps the members of the
+          broader group (particularly ones that are shyer) realize they can join
+          the effort at any point in time and allows everyone to feel more
+          ownership over the results.
+        </p>
+
+        <p>
+          You might have noticed that I named a lot of names during this post.
+          I’ll say it again: accessibility, especially when there is no initial
+          buy-in or official role for it, cannot be achieved from the actions of
+          a single person. Things don’t magically just happen: there is a
+          conscious choice and effort behind every action. Although I was
+          recognized by my peers and colleagues for my work in accessibility at
+          Humu, it truly was a team effort and I want to recognize the other
+          accessibility advocates at Humu who shared their time and energy.
+          Without them, the processes and capabilities for making Humu’s
+          products accessible wouldn’t be where it is today.
+        </p>
+        <section>
+          <h3>Cheers for Peers</h3>
+
+          <p>
+            That said, I’m not done shouting people out. There are both more
+            people I want to honor, and people I want to honor more:
+          </p>
+
+          <p>
+            Autumn Coyle, the senior designer at Humu, who was and is still an
+            invaluable advocate. She cared deeply about accessibility, and it
+            was apparent even to me as a person who never worked on a feature
+            project with her. She always promptly and thoughtfully answer any
+            questions I had on her desired keyboard and screenreader flows. She
+            also organized a monthly design and engineering collaboration
+            session. Autumn and I would share with each other our findings on
+            some global components that we had in our system, the pattern it
+            most resembled, and how to make it more inclusive for all. The
+            results of these meetings were decision documents and detailed
+            tickets.
+          </p>
+
+          <p>
+            Andres Sanchez (again), who on top of calling out every
+            accessibility issue he found (and fixing many of them) and creating
+            the #a11y Slack channel at Humu, also had an amazing ability to
+            identify opportunities for us to work on and promote accessibility
+            items. Just one example of this is when we had an internal tools
+            hackathon in early 2022 (potentially even before then). There were
+            already suggestions of what to work on but making the product more
+            accessible was not one of them. He immediately suggested that we
+            team up and work on that, and also spread the word regarding this
+            work at Humu’s recurring Demo Day (a meeting where people would
+            share what they had been working on).
+          </p>
+
+          <p>
+            Trevor Biller and Michael An, two engineers who encouraged my
+            accessibility feedback when I had felt most discouraged. This meant
+            a lot to me as it was after the time that I had been publicly told
+            that accessibility was not a priority. This had given me the signal
+            that Humu’s values and my values did not align. When they expressed
+            that they found these reviews useful, it showed me that there were
+            others who cared about inclusivity and equity. If not for their
+            comments, I might have eventually returned to my previous company
+            and the engineering side of this work would not have been done, or
+            at least until Vincent joined in March, which leads us to…
+          </p>
+
+          <p>
+            Vincent Colavin (again), who in addition to hosting office hours,
+            configured our Ladle (a component library/playground) to show
+            accessibility errors in our components so we could address them
+            earlier in the development process. Efrain Ferrer, a designer who
+            volunteered to become an office hour host when I first announced
+            that Vincent and Jason were joining the office hours roster.
+          </p>
+          <p>
+            Sophie Alpert, the VP of engineering, for many reasons. She gave me
+            tons of advice, like sharing a bit of the history of accessibility
+            at Humu, refining my strategy on choosing which pages we should
+            focus on auditing first, and also suggesting practices that fell
+            within the norms of Humu, as well as being another resource for
+            accessibility. She also cultivated and maintained a culture where
+            sharing information was easy and expected. It was incredibly easy
+            getting the first accessibility presentation on the engineering
+            team’s calendar because of how we would essentially have biweekly
+            lunch-and-learns. I have difficulty asking for things so this was
+            one less stressor in my life.
+          </p>
+
+          <p>
+            Diana Viglucci, who I already mentioned as being the current steward
+            of the accessibility documents and strategy. I also wanted to
+            highlight their contributions before that. For context, most of the
+            engineers who had prior accessibility experience were on a different
+            team (Vincent, Jason, and myself with Kevin as our manager). Diana
+            became their team’s accessibility expert, and it was exciting not
+            just seeing the accessibility work they were doing via their pull
+            requests, but also hearing about the presentations they were giving
+            on the work that has been done for their team’s newest features.
+          </p>
+
+          <p>
+            Eric Robinson, who eventually became my team’s product manager and
+            made certain process changes frictionless. I am so used to hearing
+            no, that the thought of asking to do things cause me more stress
+            than actually doing the thing. This is why I am so grateful to Eric
+            for breezily saying yes when I wanted to introduce processes related
+            to accessibility.
+          </p>
+
+          <p>
+            Will Doolittle, who made a requirement that the latest features
+            needed to meet WCAG A compliance. This was a huge win and finally
+            solidified accessibility as a priority at Humu.
+          </p>
+
+          <p>
+            Miriam O’Connor, who also encouraged and supported my mission in
+            public and private settings, and always advocated doing the right
+            thing when the topic of speed versus equity for all came up.
+          </p>
+
+          <p>
+            Kevin Ball (again), who helped me in a lot of ways beyond what I had
+            mentioned in the earlier sections. He always had a way of finding
+            exactly who to also best talk to about certain situations, presented
+            the perfect frameworks for different issues, and offered me a wealth
+            of valuable insights.
+          </p>
+
+          <p>
+            And again, anyone who ever called out any sort of accessibility
+            issue or asked or answered clarifying questions on accessibility.
+            This includes essentially everyone who has been mentioned so far,
+            but I am sure there were more.
+          </p>
+
+          <p>
+            I do want to also thank two people whose work or influence I would
+            come across though our times at Humu never overlapped. The first
+            person is Robbie Tillieard, who created an accessibility goal
+            document, which gave me an idea of where Humu was in terms of
+            vision. The second person is Carlos Lopez, an engineer who left
+            about a year before I joined. Most of the time I was pleasantly
+            surprised by something in the code base (usually even the presence
+            and correct usage of ARIA attributes), it was Carlos’s doing.
+          </p>
+
+          <p>
+            Finally, I would not have been able to play the part I did when
+            working at Humu without the support I had received at the place I
+            worked prior, Hello Alice. Thank you, Jillian Fortin, my mentor in
+            accessibility, and Kelsey Ruger, my previous boss who gave me the
+            resources, space, and confidence to learn and apply those learnings.
+          </p>
+        </section>
+      </section>
+
+      <section>
+        <h2>In Conclusion</h2>
+
+        <p>
+          When I first started drafting this post about my time as an
+          accessibility advocate at Humu, I wanted to write about how to create
+          a bottoms-up accessibility movement. However, as I went through what I
+          did, I realized that a lot of the changes on the engineering side were
+          straightforward ones and have been already covered by other experts.
+          What isn’t as widely or deeply covered is just how much of a group
+          effort this is.
+        </p>
+
+        <p>
+          It also made me realize: People make up an organization and decide
+          what is important. While we didn’t have any official roles or
+          programs, when people care about something and work towards it, it
+          shows through the improvements made. So even if accessibility doesn’t
+          start off as something that people explicitly say they care about, on
+          your journey to making things accessible you may find that sentiment
+          can change. In the meantime, there is no shortage of things that you
+          can do to help make your team create more accessible products.
+        </p>
+      </section>
+
+      <section>
+        <h2>Further Acknowledgments</h2>
+
+        <p>
+          I know what you’re thinking… “Karrie wants to give even more thanks?!”
+          Yes, I do!
+        </p>
+
+        <p>
+          Thank you to Kevin Ball and Tim Lu for looking at my initial drafts.
+          They were truly rough in every sense of the word.
+        </p>
+
+        <p>Thank you to Autumn Coyle for looking at the semi-final draft.</p>
+
+        <p>
+          While we are at it: Thank you, Blake Parkinson and Trisha Mittal. I
+          don’t think I’d have the right to even write this post at all if my
+          current team wasn’t as good at inclusivity and creating accessible
+          features as it is!
+        </p>
+
+        <p>
+          And thank you, reader, for making it through this post. Good luck on
+          your own journey to making your organization and its products more
+          inclusive.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
