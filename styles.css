@@ -2,7 +2,7 @@ body {
   padding: 2% 10%;
   font-family: "Noto Sans", Calibri, "Segoe UI", Tahoma, Geneva, Verdana,
     sans-serif;
-  max-width: 48em;
+  max-width: 36em;
   margin: auto;
   display: flex;
 }
