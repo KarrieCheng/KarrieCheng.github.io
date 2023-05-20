@@ -17,6 +17,9 @@ h6 {
 #subheading {
   color: #595959;
 }
+span {
+  font-weight: 800;
+}
 p,
 ul,
 ol,
