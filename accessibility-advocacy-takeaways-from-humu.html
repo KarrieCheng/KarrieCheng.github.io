@@ -9,37 +9,7 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap"
       rel="stylesheet"
     />
-    <style>
-      body {
-        padding: 2% 10%;
-        font-family: "Noto+Sans", Calibri, "Segoe UI", Tahoma, Geneva, Verdana,
-          sans-serif;
-      }
-      p {
-        font-size: 1em;
-        line-height: 1.5em;
-      }
-      section {
-        padding-bottom: 2em;
-      }
-      section > section {
-        padding-bottom: 1.5em;
-      }
-      ul,
-      ol {
-        margin: inherit;
-        padding: inherit;
-        line-height: 1.5em;
-      }
-      li {
-        margin-inline-start: 2em;
-        padding-inline-start: 2em;
-      }
-      aside {
-        font-size: 0.9em;
-        font-family: "Courier New", Courier, monospace;
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
   </head>
   <body>
     <main>
@@ -119,128 +89,132 @@
             </details>
           </aside>
         </section>
-        <h3>Make Learning Easy</h3>
+        <section>
+          <h3>Make Learning Easy</h3>
 
-        <p>
-          There are other ways to share information outside of presentations.
-          Ultimately, you want to make it as easy as possible to find and apply
-          knowledge.
-        </p>
+          <p>
+            There are other ways to share information outside of presentations.
+            Ultimately, you want to make it as easy as possible to find and
+            apply knowledge.
+          </p>
 
-        <p>
-          At Humu, I created an accessibility drive and training materials and
-          referenced some of these materials in widely used documents. For
-          example, Humu’s quality assurance (QA) process (known at Humu as
-          ‘bug-bashing’) not only contained an explanation on how to bug-bash
-          with the screenreader or VoiceOver but also linked to the longer and
-          more in-depth videos. I also included practices that would address
-          common accessibility issues in a style guideline document, which is
-          something that one of our most tenured engineers, Kat Slump,
-          suggested.
-        </p>
+          <p>
+            At Humu, I created an accessibility drive and training materials and
+            referenced some of these materials in widely used documents. For
+            example, Humu’s quality assurance (QA) process (known at Humu as
+            ‘bug-bashing’) not only contained an explanation on how to bug-bash
+            with the screenreader or VoiceOver but also linked to the longer and
+            more in-depth videos. I also included practices that would address
+            common accessibility issues in a style guideline document, which is
+            something that one of our most tenured engineers, Kat Slump,
+            suggested.
+          </p>
 
-        <p>
-          (Engineering specific) Another place to distribute knowledge is
-          directly in the code as comments. Some reusable components need to be
-          composed a certain way, and you want to call this out to teammates. An
-          example of this would be mentioning that a tooltip trigger needs to be
-          a button so non-mouse/trackpad users are able to interact with it.
-          Also, you may find that the codebase has 3 different tooltips, but
-          only one of those tooltips is accessible. You could also prefix the
-          inaccessible tooltips’ names with ‘deprecated’, and at the top of the
-          files note the reasons why the tooltip from a certain library is
-          preferred.
-        </p>
+          <p>
+            (Engineering specific) Another place to distribute knowledge is
+            directly in the code as comments. Some reusable components need to
+            be composed a certain way, and you want to call this out to
+            teammates. An example of this would be mentioning that a tooltip
+            trigger needs to be a button so non-mouse/trackpad users are able to
+            interact with it. Also, you may find that the codebase has 3
+            different tooltips, but only one of those tooltips is accessible.
+            You could also prefix the inaccessible tooltips’ names with
+            ‘deprecated’, and at the top of the files note the reasons why the
+            tooltip from a certain library is preferred.
+          </p>
 
-        <p>
-          (Engineering specific) You can also share knowledge within pull
-          request reviews. Sometimes a bit of code may need just an additional
-          attribute to make it more perceivable or navigable. When this happens,
-          it’s useful to write out the exact change required so that the author
-          of the pull request can directly apply this comment. Explain why
-          you’re suggesting the change and how it is improving the experience
-          for users so the author will remember the suggestion in the future. It
-          also saves time and can prevent confusion and frustration when the
-          original author does not have the knowledge to fix the issue and feels
-          the need to investigate further to correctly apply review suggestions
-          as a result.
-        </p>
+          <p>
+            (Engineering specific) You can also share knowledge within pull
+            request reviews. Sometimes a bit of code may need just an additional
+            attribute to make it more perceivable or navigable. When this
+            happens, it’s useful to write out the exact change required so that
+            the author of the pull request can directly apply this comment.
+            Explain why you’re suggesting the change and how it is improving the
+            experience for users so the author will remember the suggestion in
+            the future. It also saves time and can prevent confusion and
+            frustration when the original author does not have the knowledge to
+            fix the issue and feels the need to investigate further to correctly
+            apply review suggestions as a result.
+          </p>
 
-        <ul>
-          Tickets can also be a place to call out features that were already
-          released that need work, the reasons behind it, and the potential
-          approaches for it. This is useful for granular, one-and-done tickets.
-          In these tickets, I generally included the following:
+          <ul>
+            Tickets can also be a place to call out features that were already
+            released that need work, the reasons behind it, and the potential
+            approaches for it. This is useful for granular, one-and-done
+            tickets. In these tickets, I generally included the following:
 
-          <li>What the desired behavior was</li>
+            <li>What the desired behavior was</li>
 
-          <li>
-            What the current behavior was and how it may have been under-serving
-            users
-          </li>
+            <li>
+              What the current behavior was and how it may have been
+              under-serving users
+            </li>
 
-          <li>What a potential approach could have been to address it</li>
+            <li>What a potential approach could have been to address it</li>
 
-          <li>
-            The particular Web Content Accessibility Guidelines (WCAG) success
-            criterion that had more information on the particular issue
-          </li>
+            <li>
+              The particular Web Content Accessibility Guidelines (WCAG) success
+              criterion that had more information on the particular issue
+            </li>
 
-          <li>
-            A label tagging it as an accessibility (“a11y”) issue so that we
-            could easily find all of the accessibility issues
-          </li>
-        </ul>
+            <li>
+              A label tagging it as an accessibility (“a11y”) issue so that we
+              could easily find all of the accessibility issues
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h3>Create Communities For Learning</h3>
 
-        <h3>Create Communities For Learning</h3>
+          <p>
+            There are a lot of considerations to take into account while
+            creating an accessible product, and not all of them were captured in
+            the Humu documents. Luckily, we had different places available for
+            the team to seek out additional help.
+          </p>
 
-        <p>
-          There are a lot of considerations to take into account while creating
-          an accessible product, and not all of them were captured in the Humu
-          documents. Luckily, we had different places available for the team to
-          seek out additional help.
-        </p>
+          <p>
+            Andres Sanchez, the engineer mentioned earlier, created a Slack
+            channel dedicated to accessibility which became a key safe place for
+            anyone to ask questions or share knowledge in the flow of work. It
+            also generally became the hub for us to share resources, interesting
+            news, or tools.
+          </p>
 
-        <p>
-          Andres Sanchez, the engineer mentioned earlier, created a Slack
-          channel dedicated to accessibility which became a key safe place for
-          anyone to ask questions or share knowledge in the flow of work. It
-          also generally became the hub for us to share resources, interesting
-          news, or tools.
-        </p>
+          <p>
+            We also had multiple office hours throughout the week for those who
+            might need help with implementing inclusive experiences. This is an
+            idea that I got from a former coworker at Hello Alice, Marianne
+            Masculino, that worked well at Humu too.
+          </p>
 
-        <p>
-          We also had multiple office hours throughout the week for those who
-          might need help with implementing inclusive experiences. This is an
-          idea that I got from a former coworker at Hello Alice, Marianne
-          Masculino, that worked well at Humu too.
-        </p>
+          <p>
+            If you create enough opportunities and spaces for learning,
+            eventually making an inaccessible product becomes harder and harder.
+          </p>
+        </section>
+        <section>
+          <h3>Share Your Favorite Resources</h3>
 
-        <p>
-          If you create enough opportunities and spaces for learning, eventually
-          making an inaccessible product becomes harder and harder.
-        </p>
+          <ul>
+            Not all content needs to be custom! For those who are interested in
+            learning more about web accessibility beyond our organization’s
+            context, I like to share the following resources (which are mostly
+            specifications):
 
-        <h2>Share Your Favorite Resources</h2>
+            <li>The Google Intro to Accessibility article</li>
 
-        <ul>
-          Not all content needs to be custom! For those who are interested in
-          learning more about web accessibility beyond our organization’s
-          context, I like to share the following resources (which are mostly
-          specifications):
+            <li>A11ycasts with Rob Dodson</li>
 
-          <li>The Google Intro to Accessibility article</li>
+            <li>HyperText Markup Language (HTML) Specification</li>
 
-          <li>A11ycasts with Rob Dodson</li>
+            <li>Accessible Rich Internet Applications (ARIA) Specification</li>
 
-          <li>HyperText Markup Language (HTML) Specification</li>
-
-          <li>Accessible Rich Internet Applications (ARIA) Specification</li>
-
-          <li>
-            World Wide Web Consortium (W3C) Accessibility Standards Overview
-          </li>
-        </ul>
+            <li>
+              World Wide Web Consortium (W3C) Accessibility Standards Overview
+            </li>
+          </ul>
+        </section>
       </section>
       <section>
         <h2>Share your struggles and strategies</h2>

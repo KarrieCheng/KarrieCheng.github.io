@@ -1,0 +1,48 @@
+body {
+  padding: 2% 10%;
+  font-family: "Noto Sans", Calibri, "Segoe UI", Tahoma, Geneva, Verdana,
+    sans-serif;
+  max-width: 48em;
+  display: flex;
+  align-content: center;
+}
+
+p,
+ul,
+ol,
+li,
+details {
+  font-size: 1em;
+  line-height: 7em;
+}
+section {
+  padding-bottom: 3em;
+}
+ul,
+ol {
+  margin: inherit;
+  padding: inherit;
+}
+li {
+  margin-inline-start: 2em;
+  padding-inline-start: 2em;
+}
+aside {
+  font-size: 0.9em;
+  font-family: "Courier New", Courier, monospace;
+}
+
+@media only screen and (min-width: 600px) {
+  p,
+  ul,
+  ol,
+  li,
+  details {
+    font-size: 1em;
+    line-height: 2.5em;
+  }
+
+  section {
+    padding-bottom: 3em;
+  }
+}
