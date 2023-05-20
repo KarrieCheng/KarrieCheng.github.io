@@ -20,7 +20,7 @@ ol,
 li,
 details {
   font-size: 1em;
-  line-height: 7em;
+  line-height: 2.5em;
 }
 section {
   padding-bottom: 3em;
@@ -40,15 +40,6 @@ aside {
 }
 
 @media only screen and (min-width: 700px) {
-  p,
-  ul,
-  ol,
-  li,
-  details {
-    font-size: 1em;
-    line-height: 2.5em;
-  }
-
   section {
     padding-bottom: 3em;
   }
